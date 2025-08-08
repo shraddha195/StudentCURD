@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student CRUD</title>
+    </head>
+    <body>
+<h1>Student Management</h1>
+<form id="studentForm">
+    <input type="hidden" id="studentId">
+    <div>
+        <label for="Name">Enter Student Name</label>
+        <input type="text" id="Name" required>
+    </div>
+     <div>
+        <label for="Age">Enter Student Age</label>
+        <input type="number" id="Age" required>
+    </div>
+    <div>
+        <label for="Address">Enter Student Address</label>
+        <input type="text" id="Address" required>
+    </div>
+    <button type="submit" id="submitBtn">Add Student</button>
+    <button type="button" id="resetBtn">Reset</button>
+</form>
+ 
+<h1>Student List</h1>
+<table>
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+</thead>
+<tbody id="studentTableBody"></tbody>
+</table>
+<script>
+const API_URL="http://localhost:8082/api/student"
+//fetch emp
+async function fetchStudents(){
+    try{
+const response=await fetch(API_URL);
+if(!response.ok) throw new Error(`HTTP error ,Status :${response.status}`);
+const employees=await response.json();
+const tableBody=document.getElementById("studentTableBody");
+tableBody.innerHTML='';
+employees.forEach(student => {
+    const row=document.createElement('tr');
+    row.innerHTML=`
+    <td>${student.Id || 'NA'}</td>
+    <td>${student.Name || 'NA'}</td>
+    <td>${student.Age || 'NA'}</td>
+    <td>${student.Address || 'NA'}</td>
+    <td>
+        <button onclick="editEmployee()">Edit</button>
+        <button onclick="deleteEmployee()">Delete</button>
+        </td>
+    `;
+    tableBody.appendChild(row);
+});
+ 
+    }catch(error){console.error('Error in featching Employee ',error);
+        alert('Failed to fetch Student :'+error.message);
+    }
+}
+ 
+fetchStudents();
+        </script>
+    </body>
+</html>
