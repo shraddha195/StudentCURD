@@ -1,10 +1,10 @@
-#📘 StudentCURD
+📘 StudentCURD
 
 
 A simple Res tAPL based Maven project to perform CRUD operations on Students tables using SpringBoot and PostgreSQL.
 
 
-#✅ Features
+✅ Features
 
 
 1)Add  new Students
@@ -34,7 +34,7 @@ A simple Res tAPL based Maven project to perform CRUD operations on Students tab
 7)Vs code
 
 
-#⚙️ Prerequisites
+⚙️ Prerequisites
 
 
 *JDK 17 or above
@@ -57,7 +57,7 @@ A simple Res tAPL based Maven project to perform CRUD operations on Students tab
 
 
 
-#🚀 How to Run?
+🚀 How to Run?
 
 
 Run all backend project
@@ -71,7 +71,7 @@ on browser go tothe following link
 :- (http://localhost:5500/index.html)
 
 
-#📞 Contacts:
+📞 Contacts:
 
 
 For any queries, please contact:
@@ -91,7 +91,7 @@ Email:nikitaonarwad@gmail.com
 
 Happy Coding! 🚀
 
-#Output Screenshot
+Output Screenshot
 
 <img width="1760" height="948" alt="image" src="https://github.com/user-attachments/assets/77fa7c1b-a75b-4d33-a890-61383b368602" />
 
